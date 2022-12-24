@@ -1,9 +1,10 @@
 body
 {
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    
+
 }
+
 .book_card
 {
     background-color: white;
@@ -35,6 +36,10 @@ body
     font-size: xxx-large;
 
 }
+.add_book:hover
+{
+    transform: scale(1.03) perspective(1px)
+}
 
 .delete
 {
@@ -54,14 +59,112 @@ body
     padding: 15px 30px;
     color: white;
 }
-.header h3
+ h3
 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.footer
+{
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #142c18;
+    color: white;
+
 }
 /* main book content */
 .content
 {
     padding: 40px 50px;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
 
+}
+
+/* modal */
+.modal_container
+{   background-color: wheat;
+    opacity: 0;
+    pointer-events: none;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal
+{
+    display: flex;
+    flex-direction: column;
+    background-color:   rgb(255, 255, 255);
+    padding: 30px 40px;
+    border-radius: 1ch;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    
+}
+.modal p
+{
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight: bolder;
+}
+#close_modal
+{
+    align-self: flex-end;
+    width: 10%;
+}
+#close_modal:hover
+{
+    transform: scale(1.05) perspective(1px)
+}
+.modal_show
+{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Form */
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+form button
+{
+    width: 50%;
+    margin-top: 20px;
+    height: 35px;
+    background-color: white;
+    border-radius: 1ch;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+.form_row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    
+}
+.form_row p
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+.form_row input
+{
+    height: 30px;
+    border-radius: 1ch;
 }

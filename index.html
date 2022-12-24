@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,25 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"> </script>
 </head>
+
 <body>
 
     <!-- Basic layout for the website -->
     <div class="container">
         <div class="header">
-            <div class="logo"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.logolynx.com%2Fimages%2Flogolynx%2Faa%2Faa3993182ad88a047d21fbcc09b44d04.png&f=1&nofb=1&ipt=04297209bd8ff0e9f5798a55e70c3328b5c904c80a8ee87f709435364cc1378f&ipo=images" alt="" width="30px" height="30px"></div>
+            <div class="logo"><img
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.logolynx.com%2Fimages%2Flogolynx%2Faa%2Faa3993182ad88a047d21fbcc09b44d04.png&f=1&nofb=1&ipt=04297209bd8ff0e9f5798a55e70c3328b5c904c80a8ee87f709435364cc1378f&ipo=images"
+                    alt="" width="30px" height="30px"></div>
             <h3>Your Library</h3>
-            <div class="user_profile"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_299586.png&f=1&nofb=1&ipt=d22e483733c676e62a8aa8b1a1861689464e326349239aededeb7ffede4b1d1e&ipo=images" alt="" width="30px" height="30px"></div>
+            <div class="user_profile"><img
+                    src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_299586.png&f=1&nofb=1&ipt=d22e483733c676e62a8aa8b1a1861689464e326349239aededeb7ffede4b1d1e&ipo=images"
+                    alt="" width="30px" height="30px"></div>
         </div>
         <div class="content">
-            <button class="add_book">+</button>
+            <button class="add_book" id="add_book">+</button>
         </div>
         <div class="footer">
-
+            <h3>Project made by @2DDraghici</h3>
         </div>
     </div>
 
@@ -29,7 +35,7 @@
     <!-- The template used for the books -->
     <template>
         <div class="book_card">
-        
+
             <h3 class="book_title">Title:</h3>
             <h4 class="author">Author:</h4>
             <p>Number of pages: </p>
@@ -37,5 +43,34 @@
             <button class="delete">Delete</button>
         </div>
     </template>
+
+    <!-- The moval form -->
+    <div class="modal_container" id="modal_container">
+        <div class="modal">
+            <form action="" method="post">
+                <button id="close_modal">X</button>
+                <div class="rows">
+                    <div class="form_row">
+                        <p>Title for the name of the book</p>
+                        <input type="text">
+                    </div>
+                    <div class="form_row">
+                        <p>Author</p>
+                        <input type="text">
+                    </div>
+                    <div class="form_row">
+                        <p>Number of pages </p>
+                        <input type="text">
+                    </div>
+                    <div class="form_row">
+                        <p>Number of pages read</p>
+                        <input type="text">
+                    </div>
+                </div>
+                <button id="add_book">Add book</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
