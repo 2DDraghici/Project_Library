@@ -23,7 +23,7 @@
                     src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_299586.png&f=1&nofb=1&ipt=d22e483733c676e62a8aa8b1a1861689464e326349239aededeb7ffede4b1d1e&ipo=images"
                     alt="" width="30px" height="30px"></div>
         </div>
-        <div class="content">
+        <div class="content" id="content">
             <button class="add_book" id="add_book">+</button>
         </div>
         <div class="footer">
@@ -34,12 +34,12 @@
 
     <!-- The template used for the books -->
     <template>
-        <div class="book_card">
+        <div id="book_card">
 
-            <h3 class="book_title">Title:</h3>
-            <h4 class="author">Author:</h4>
-            <p>Number of pages: </p>
-            <p>Read: </p>
+            <h3 id="template_title">Title:</h3>
+            <h4 id="template_author">Author:</h4>
+            <p id="template_pages">Number of pages: </p>
+            <p id="template_pages_read">Read: </p>
             <button class="delete">Delete</button>
         </div>
     </template>
@@ -51,23 +51,23 @@
                 <button id="close_modal">X</button>
                 <div class="rows">
                     <div class="form_row">
-                        <p>Title for the name of the book</p>
-                        <input type="text">
+                        <p>Title</p>
+                        <input type="text" id="form_title">
                     </div>
                     <div class="form_row">
                         <p>Author</p>
-                        <input type="text">
+                        <input type="text" id="form_author">
                     </div>
                     <div class="form_row">
                         <p>Number of pages </p>
-                        <input type="text">
+                        <input type="text" id="form_pages">
                     </div>
                     <div class="form_row">
                         <p>Number of pages read</p>
-                        <input type="text">
+                        <input type="text" id="form_pages_read">
                     </div>
                 </div>
-                <button id="add_book">Add book</button>
+                <button id="submit_book">Add book</button>
             </form>
         </div>
     </div>
