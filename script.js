@@ -43,13 +43,15 @@ const removeChilds = (parent) => {
     let newBook  = book_template.content.cloneNode(true);
     card = newBook.querySelector("div")
     template_title=card.querySelector("#template_title")
+    console.log("this is the template title")
+    console.log(template_title.innerHTML)
     template_author=card.querySelector("#template_author")
     template_pages=card.querySelector("#template_pages")
     template_pages_read=card.querySelector("#template_pages_read")
-    template_title += book.title
-    template_author += book.author
-    template_pages += book.no_pages
-    template_pages_read  += book.no_pages_read
+    template_title.innerHTML += book.title
+    template_author.innerHTML += book.author
+    template_pages.innerHTML += book.no_pages
+    template_pages_read.innerHTML  += book.no_pages_read
     
     content.appendChild(newBook)
     console.log(newBook)
@@ -85,4 +87,5 @@ submit_book.addEventListener('click',(e)=>
 
 
 let book1 = new Book("123","123","123","123")
-console.log(book1)
+let a = "3 "
+console.log(a += book1.title)
