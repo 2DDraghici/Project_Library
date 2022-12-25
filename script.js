@@ -55,13 +55,14 @@ const removeChilds = (parent) => {
     template_pages_read.innerHTML  += book.no_pages_read
 
     // add delete button
+    
     delete_button = card.querySelector(".delete")
     console.log(delete_button)
-    delete_button.addEventListener("click", (e) =>{
-        console.log("Button element", e)
-        content.removeChild(card)
+    delete_button.addEventListener("click", (e) => {
+        //console.log("this", this); //valid but empty json
+        console.log("e.target.parentNode", e.target.parentNode.parentNode.removeChild(e.target.parentNode)); //<=undefined
       })
-    
+    //append books
     content.appendChild(newBook)
     console.log(newBook)
 
