@@ -23,15 +23,38 @@ close_modal.addEventListener('click', (e)=>
 })
 
 // displaying the books
-const content = getElementById("content")
+const content = document.getElementById("content")
+console.log(content)
 const removeChilds = (parent) => {
     while (parent.lastChild != add_book ) {
         parent.removeChild(parent.lastChild);
     }
 };
+
   //creating the books via the template
   const book_template = document.getElementById("book_card")
-  function createBookElement(title,author, pages, pages_read)
+  var clon = book_template.content.cloneNode(true);
+  console.log(clon.innerHTML)
+  item = clon.querySelector("div");
+  template_title = item.querySelector("#template_title")
+  console.log(template_title.innerHTML + " modified structure")
+  function createBookElement(book)
+  {
+    let newBook  = book_template.content.cloneNode(true);
+    card = newBook.querySelector("div")
+    template_title=card.querySelector("#template_title")
+    template_author=card.querySelector("#template_author")
+    template_pages=card.querySelector("#template_pages")
+    template_pages_read=card.querySelector("#template_pages_read")
+    template_title += book.title
+    template_author += book.author
+    template_pages += book.no_pages
+    template_pages_read  += book.no_pages_read
+    
+    content.appendChild(newBook)
+    console.log(newBook)
+
+  }
 
 //Adding the books
 let myLibrary = []
@@ -53,7 +76,11 @@ submit_book.addEventListener('click',(e)=>
     let newBook = new Book(book_title,book_author,book_pages,book_pages_read)
     myLibrary.push(newBook)
     console.log(myLibrary)
+    // add book to content
+    createBookElement(newBook)
 
+    //close modal
+    modal_container.classList.remove("modal_show")
 }) 
 
 
