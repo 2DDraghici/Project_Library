@@ -48,10 +48,19 @@ const removeChilds = (parent) => {
     template_author=card.querySelector("#template_author")
     template_pages=card.querySelector("#template_pages")
     template_pages_read=card.querySelector("#template_pages_read")
+    // add input data
     template_title.innerHTML += book.title
     template_author.innerHTML += book.author
     template_pages.innerHTML += book.no_pages
     template_pages_read.innerHTML  += book.no_pages_read
+
+    // add delete button
+    delete_button = card.querySelector(".delete")
+    console.log(delete_button)
+    delete_button.addEventListener("click", (e) =>{
+        console.log("Button element", e)
+        content.removeChild(card)
+      })
     
     content.appendChild(newBook)
     console.log(newBook)
@@ -85,7 +94,3 @@ submit_book.addEventListener('click',(e)=>
     modal_container.classList.remove("modal_show")
 }) 
 
-
-let book1 = new Book("123","123","123","123")
-let a = "3 "
-console.log(a += book1.title)
